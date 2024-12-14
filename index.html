@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Personal Portfolio</title>
+    <style>
+        @media screen and (max-width: 600px){
+            .header h1 {
+                font-size: 6vw;
+                padding-top: 4vw;
+                padding-left: 1vw;
+            }
+            .header ul li a{
+                font-size: 3vw;
+            }
+            .header ul li {
+                margin-left: 1vw;
+                padding-top: 6vw;
+            }
+            #home .left, .right {
+                float: none;
+                width: 100%;
+            }
+            #home h1 {
+                font-size: 10vw;
+                padding-left: 5vw;
+                padding-top: 65vw;
+            }
+            #home h2 {
+                font-size: 4vw;
+            }
+            #home p {
+                font-size: 5vw;
+                margin-top: 2vw;
+            }
+            #about .fa-tiktok{
+                font-size: 5vw;
+            }
+            #about .fa-facebook {
+                font-size: 5vw;
+            }
+            #about .fa-square-instagram {
+                font-size: 5vw;
+            }
+            #home .right img {
+                display: none;
+            }   
+            #home {
+                text-align: center;
+            }
+            #about {
+                height: 100vh;
+                width: 100%;
+            }
+            #about .about-left, .about-right {
+                float: none;
+                height: 50vh;
+                width: 100%;
+            }
+            .about-right .about-us{
+                font-size: 8vw;
+                color: white;
+                margin-top: -65vw;
+                margin-left: -16vw;
+            }
+            #about .about-right p {
+                margin-left: -47vw;
+                color: white;
+                font-size: 3vw;
+            }
+            #about .about-left img {
+                width: 95%;
+                margin-top: -100vw;
+                height: 45vh;
+                margin-left: 3vw;
+            }
+            #project {
+                height: 100vh;
+                background: linear-gradient(to bottom right,#0c0c0c,#3b3b3b);
+            }
+            #project .project-container {
+                width: 45%;
+                margin-bottom: 70vw;
+                margin-top: -60vw;
+            }
+            #project h3 {
+                font-size: 2.5vw;
+                text-align: center;
+                margin-left: -1vw;
+                margin-top: 3vw;
+            }
+            #project p {
+                font-size: 2.1vw;
+                margin-top: 1vw;
+
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth ;
+        }
+        .section {
+            width: 100%;
+            height: 100vh;
+        }
+        .header {
+            position: fixed;
+            display: flex;
+            z-index: 100;
+            top: 0;
+            justify-content: space-between;
+            width: 100%;
+            backdrop-filter: blur(50px);
+            -webkit-backdrop-filter: blur(50px);
+        }
+        .header i {
+            float: right;
+            margin-top: 1.8vw;
+            font-size: 2vw;
+            margin-left: 25vw;
+            margin-right: -24vw;
+            cursor: pointer;
+        }
+        .fa-facebook {
+            color: rgb(64, 64, 246);
+            font-size: 2vw;
+            margin-top: 1vw;
+            cursor: pointer;
+        }
+        .fa-tiktok {
+            color: #fefefe;
+            font-size: 2vw;
+            margin-top: 1vw;
+            margin-left: .5vw;
+            margin-right: .5vw;
+            cursor: pointer;
+        }
+        .fa-square-instagram {
+            color: orange;
+            font-size: 2vw;
+            margin-top: 1vw;
+            cursor: pointer;
+        }
+        .fa-envelope {
+            font-size: 2vw;
+            margin-left: .5vw;
+            margin-right: .5vw;
+        }
+        h1 {
+            font-size: 3.5vw;
+            padding: 0.5vw;
+            margin-left: 2vw;
+            color: rgb(252, 250, 250);
+        }
+        ul {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        ul li {
+            margin-left: 4vw;
+            list-style: none;
+            padding-top: 2vw;
+            margin-right: 2vw;
+        }
+        ul li a {
+            text-decoration: none;
+            color: rgb(252, 250, 250);
+            font-size: 1.5vw;
+        }
+        #home {
+            width: 100%;
+            height: 105vh;
+            background: linear-gradient(to bottom right,#0c0c0c,#3b3b3b);
+        }
+        .left, .right {
+            width: 50%;
+            float: left;
+            height: 100vh;
+            
+
+        }
+        .left h1 {
+            font-size: 5vw;
+            font-family: serif;
+            color: rgb(252, 250, 250);
+            margin-left: 1.8vw;
+            font-weight: 800;
+            padding-top: 18vw;
+        }
+        .left p{
+            font-size: 1.9vw;
+            margin-left: 1.9vw;
+            margin-top: 0.5vw;
+            color: rgb(252, 250, 250);
+        }
+        .left h2 {
+            font-size: 2vw;
+            margin-left: 1.9vw;
+            font-weight: 200;
+            color: rgb(252, 250, 250);
+        }
+        .right img {
+            width: 102%;
+            height: 150vh;
+            margin-top: -7vw;
+            margin-left: -1.8vw;
+        }
+        #about {
+            height: 101vh;
+            width: 100%;
+            border-top: 2px solid black;
+            background: linear-gradient(to bottom right,#0c0c0c,#3b3b3b);
+            border-bottom: 2px solid black;
+        }
+        .about-left, .about-right{
+            float: left;
+            width: 50%;
+            height: 100vh;
+        }
+        .about-us {
+            color: #fdfdfd;
+            margin-top: 8vw;
+        }
+        #about p {
+            font-size: 1.5vw;
+            color: white;
+            margin-left: 2vw;
+        }
+        .about-left img {
+            width: 90%;
+            height: 80vh;
+            margin-top: 6vw;
+            margin-left: 2vw;
+        }
+        #project {
+            width: 100%;
+            height: 100vh;
+        }
+        .project {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100%; 
+            flex-wrap: wrap;
+            background: linear-gradient(to bottom right,#0c0c0c,#3b3b3b);
+            height: 100vh;
+            padding-top: 5vw;
+
+        }
+        .project-container {
+            width: 30%;
+            height: 40vh;
+            border: 1px solid white;
+            background-color: #1b1b1b;
+            margin-left: 2vw;
+            animation: appear linear ;
+            animation-timeline: view();
+            animation-range: entry 0% cover 30%;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateX(-150px);
+                transition: 5s;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .project-container .picture {
+            height: 25vh;
+            border-bottom: 1px solid #fefefe;
+        }
+        .project-container p {
+            color: #fdfdfd;
+            font-size: 1.1vw;
+            margin-left: 4.2vw;
+            margin-top: .2vw;
+        }
+        .project-container a {
+            color: rgb(65, 65, 234);
+        }
+        .project-container h3 {
+            color: #fefefe;
+            font-size: 1.5vw;
+            padding-top: 2vw;
+            padding-left: 3vw;
+        }
+        .picture img{
+            width: 100%;
+            height: 25vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="header">
+            <div class="title">
+                <h1>My Portfolio</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#project">Project/Activity</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="home">
+            <div class="left">
+                <h1>Hi, I'm John Lloyd!</h1>
+                <h2>Currently a Second year student of Bachelor of <br>Science in Information Technology at Western Visayas State University-Lambunao Campus</h2>
+                <p><i class="fa-solid fa-location-dot"></i>  ILOILO, PH</p>
+            </div>
+            <div class="right">
+                <img src="/images/me-removebg-preview.png" alt="">
+            </div>
+        </div>
+        <div id="about">
+            <div class="about-left">
+                <img src="/images/me.jpg" alt="">
+            </div>
+            <div class="about-right">
+                <h1 class="about-us">About me:</h1>
+                <p> Hello again, I  am currently a second-year student at Western Visayas State University-Lambunao Campus, enrolled in the Bachelor of Science in Information Technology program. This has been an exciting journey as I am learning new skills and concepts related to technology and its applications. My courses have introduced me to various programming languages, software development practices, and systems management techniques. The university provides a supportive learning environment, which motivates me to push through challenges and strive for excellence. I also appreciate the opportunity to work on projects that help me apply the knowledge I gain in class. I am looking forward to the next stages of my academic journey and to continuing to grow both personally and professionally.<br>       
+                    <a href="https://www.facebook.com/johnlloyd.anerdes"><i class="fa-brands fa-facebook" class="facebook"></i></a>
+                    <a href="https://m.me/johnlloyd.aner"><i class="fa-solid fa-envelope"></i></i></a>
+               <i class="fa-brands fa-square-instagram"></i>
+               <i class="fa-brands fa-tiktok" class="tiktok"></i>
+                </p>
+            </div>
+        </div>
+        <div id="project">
+            <div class="project">
+                <div class="project-container">
+                    <div class="picture">
+                        <img src="/images/Screenshot_13-12-2024_17628_magbanuaresponsive.netlify.app.jpeg" alt="">
+                    </div>
+                    <div class="link">
+                        <h3>Activity Name: Home Page</h3>
+                        <p>Link: <a href="https://webpagebookstore.netlify.app/" target="_blank">https://webpagebookstore.netlify.app/</a></p>
+                    </div>
+                </div> 
+                <div class="project-container">
+                    <div class="picture">
+                        <img src="/images/Screenshot_13-12-2024_17628_magbanuaresponsive.netlify.app.jpeg" alt="">
+                    </div>
+                    <div class="link">
+                        <h3>Activity Name: Responsive Webpage</h3>
+                        <p>Link: <a href="https://magbanuaresponsive.netlify.app/" target="_blank">https://magbanuaresponsive.netlify.app/</a></p>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="picture">
+                        <img src="/images/Screenshot_13-12-2024_171330_responsivefastfood.netlify.app.jpeg" alt="">
+                    </div>
+                    <div class="link">
+                        <h3>Activity Name: Individual Webpage</h3>
+                        <p>Link: <a href="https://responsivefastfood.netlify.app/?authuser=0" target="_blank">https://responsivefastfood.netlify.app/</a></p>
+                    </div>
+                </div> 
+                <div class="project-container">
+                    <div class="picture">
+                        <img src="/images/Screenshot_13-12-2024_171516_calculatoractivity.netlify.app.jpeg" alt="">
+                    </div>
+                    <div class="link">
+                        <h3>Activity Name: Calculator UI Design</h3>
+                        <p>Link: <a href="https://calculatoractivity.netlify.app/?authuser=0" target="_blank">https://calculatoractivity.netlify.app/</a></p>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="picture">
+                        <img src="/images/Screenshot_13-12-2024_171516_calculatoractivity.netlify.app.jpeg" alt="">
+                    </div>
+                    <div class="link">
+                        <h3>Activity Name: Functional Calculator</h3>
+                        <p>Link: <a href="https://mellifluous-kringle-d12150.netlify.app/?authuser=0" target="_blank">https://mellifluous-kringle-d12150.netlify.app/</a></p>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="picture">
+                        <img src="/images/Screenshot_14-12-2024_16735_magbanuasignup.netlify.app.jpeg" alt="">
+                    </div>
+                    <div class="link">
+                        <h3>Activity Name: Sign up and Log in</h3>
+                        <p>Link: <a href="https://magbanuasignup.netlify.app/" target="_blank">https://magbanuasignup.netlify.app/</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
